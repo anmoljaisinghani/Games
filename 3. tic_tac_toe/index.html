@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="mode-selection">
+            <h2 style="color: aliceblue; margin-bottom: 30px;">Choose Game Mode</h2>
+            <button id="twoPlayerBtn" class="btn mode-btn">2 Player</button>
+            <button id="vsComputerBtn" class="btn mode-btn" style="margin-top: 20px;">Vs. Computer</button>
+        </div>
+
+        <div class="symbol-selection hide-initially">
+            <h2 style="color: aliceblue; margin-bottom: 30px;">Play as:</h2>
+            <button id="chooseXBtn" class="btn symbol-btn" data-symbol="X">X</button>
+            <button id="chooseOBtn" class="btn symbol-btn" data-symbol="O" style="margin-top: 20px;">O</button>
+        </div>
+
+        <div class="game-elements hide-initially">
+            
+            <div class="score-board">
+                <div class="score-x">
+                    X Score: <span id="scoreX">0</span>
+                </div>
+                <div class="score-o">
+                    O Score: <span id="scoreO">0</span>
+                </div>
+            </div>
+            
+            <div class="turn">
+             <div class="choose">
+                <div class="turn1 b-s">X</div>
+                <div class="turn2">O</div>
+             </div>
+            </div>
+            
+            <div class="game">
+                <button class="boxes box1 hover"></button>
+                <button class="boxes box2 hover"></button>
+                <button class="boxes box3 hover"></button>
+                <button class="boxes box4 hover"></button>
+                <button class="boxes box5 hover"></button>
+                <button class="boxes box6 hover"></button>
+                <button class="boxes box7 hover"></button>
+                <button class="boxes box8 hover"></button>
+                <button class="boxes box9 hover"></button>
+            </div>
+            
+            <div class="msg hide">
+                Winner <span id="result"></span>
+            </div>
+            
+            <div class="button-container">
+                <button id="reset" class="btn">Reset</button>
+                <button id="ng" class="btn">New Game</button>
+            </div>
+
+        </div>
+    </div>
+  <script src="script.js"></script>  
+</body>
+</html>

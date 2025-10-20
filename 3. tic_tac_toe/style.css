@@ -1,0 +1,237 @@
+/* style.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(31, 38, 44);
+}
+
+/* --- Container and Game Elements --- */
+.container{
+    width: 90vw; 
+    height: 90vh;
+    max-width: 450px; 
+    padding: 2px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game-elements {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game{
+    background-color: rgb(31, 38, 44);
+    width: 100%;
+    height: 60vw; 
+    max-height: 400px;
+    display:grid;
+    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 33% 33% 33%;
+    gap: 10px; 
+    margin-top: 10px; 
+}
+.boxes{
+    background-color: transparent;
+    /* Neumorphic shadow effect */
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.5),
+    -4px -4px 8px rgba(47, 58, 68, 0.5); 
+    color:rgb(17, 52, 182);
+    font-size: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+.hover:hover{
+    /* Inset shadow for the 'pressed' effect */
+    box-shadow:inset 4px 4px 8px rgba(0,0,0,0.8),
+               inset -4px -4px 8px rgba(47, 58, 68, 0.3);
+}
+
+/* --- Turn Indicator --- */
+.turn{
+    width: 100%;
+    height: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+.choose{
+    width: 50%; 
+    min-width: 120px;
+    height: 50px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.5),
+    -4px -4px 8px rgba(47, 58, 68, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.turn1,.turn2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 10px;
+}
+.turn1{
+    color: rgb(174, 51, 96);
+}
+.turn2{
+    color: rgb(17, 52, 182);
+}
+.b-s{
+    /* Pressed state for the current turn/winning boxes */
+    box-shadow:inset 2px 2px 5px rgba(0,0,0,0.8),
+               inset -2px -2px 5px rgba(47, 58, 68, 0.3);
+    font-size: 20px; 
+}
+
+/* --- Border Radius for Corner Boxes --- */
+.box1{ border-radius:10px 0px 0px 0px ; }
+.box3{ border-radius:0px 10px 0px 0px ; }
+.box7{ border-radius:0px 0px 0px 10px ; }
+.box9{ border-radius:0px 0px 10px 0px ; }
+
+/* --- Message and Buttons --- */
+.msg{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: aliceblue;
+    gap: 5px;
+    font-size: 20px;
+    padding: 15px 0;
+}
+.hide{
+    display: none;
+}
+.btn{
+    position: static;
+    margin: 10px;
+    width: 120px ; 
+    padding: 12px 5px;
+    background: transparent;
+    border: none;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.8),
+    -2px -5px 10px rgba(0,0,0,0.8);
+    border-radius: 10px;
+    color: aliceblue;
+    font-size: 15px;
+    cursor: pointer;
+}
+.btn:hover{
+    box-shadow:inset 2px 5px 10px rgba(0,0,0,0.8); 
+    color:rgba(240, 248, 255, 0.438);
+    font-size: small;
+}
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    margin-top: auto; 
+}
+
+/* --- Scoreboard Styles --- */
+.score-board {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 15px; 
+    font-size: 18px;
+    color: aliceblue;
+    background: transparent;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.8),
+    -2px -5px 10px rgba(0,0,0,0.8);
+    border-radius: 10px;
+}
+
+.score-x {
+    color: rgb(174, 51, 96); 
+    font-weight: 700;
+}
+
+.score-o {
+    color: rgb(17, 52, 182); 
+    font-weight: 700;
+}
+
+/* --- Mode Selection & Symbol Selection Screens --- */
+.hide-initially{
+    display: none;
+}
+.mode-selection, .symbol-selection{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.mode-btn{
+    width: 70%;
+    max-width: 200px;
+    font-size: 18px;
+}
+.symbol-btn {
+    width: 70%;
+    max-width: 150px;
+    font-size: 24px; /* Larger font for the symbol buttons */
+    padding: 15px 5px;
+    font-weight: bold;
+}
+#chooseXBtn {
+    color: rgb(174, 51, 96);
+}
+#chooseOBtn {
+    color: rgb(17, 52, 182);
+}
+
+
+/* --- Desktop/Larger Screen Adjustments (Media Query) --- */
+@media (min-width: 768px) {
+    .container {
+        width: 450px; 
+        height: 600px; 
+    }
+    .game-elements {
+        height: 100%;
+    }
+    .game {
+        width: 400px; 
+        height: 400px; 
+        max-height: none;
+        margin-bottom: 20px;
+    }
+    .boxes {
+        font-size: 80px; 
+    }
+}
